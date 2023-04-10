@@ -37,11 +37,15 @@ const blogSchema = new mongoose.Schema(
 
 // This will extract Date from the createdAt and store as dd-mm-yyyy
 blogSchema.pre("save", function (next) {
-    let date = JSON.stringify(this.createdAt)
-        .substring(1, 11)
-        .split("-")
-        .reverse()
-        .join("-");
+    // The format is : Feb 12 2023
+    let date = this.createdAt.toString().substring(4, 15);
+
+    // The format is dd-mm-yyy
+    // let date = JSON.stringify(this.createdAt)
+    //     .substring(1, 11)
+    //     .split("-")
+    //     .reverse()
+    //     .join("-");
 
     this.date = date;
     next();

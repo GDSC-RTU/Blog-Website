@@ -21,13 +21,13 @@ app.listen(PORT, async () => {
     await connect();
     console.log("DB Connected");
 
-    const blogRepo = new BlogRepository();
+    // const blogRepo = new BlogRepository();
     // const blog = await blogRepo.create({
     //     title: "2nd Day of Developing",
     //     author: "drkspark12",
-    //     content: "trying to see wt will be returned after deleting",
-    //     tags: ["dev", "trying"],
-    //     userId: "umasree",
+    //     content: "Changing date format",
+    //     tags: ["dev"],
+    //     userId: "umasree2",
     // });
     // const blog = await blogRepo.destroy("643441312fcd376c6462824e");
     // const blogs = await blogRepo.getBlogsOfUser("umasree");
