@@ -3,7 +3,7 @@ const path = require("path");
 const cors = require("cors");
 const { PORT } = require("./config/serverConfig");
 const connect = require("./config/database");
-const Blog = require("./models/blog");
+const BlogRepository = require("./repository/blog-repository");
 
 const app = express();
 
@@ -21,11 +21,15 @@ app.listen(PORT, async () => {
     await connect();
     console.log("DB Connected");
 
-    // const blog = await Blog.create({
-    //     title: "Blog With Commentss",
-    //     author: "drkspark",
-    //     content: "Hello World",
-    //     tags: ["WebDev", "Trying First Time"],
+    const blogRepo = new BlogRepository();
+    // const blog = await blogRepo.create({
+    //     title: "2nd Day of Developing",
+    //     author: "drkspark12",
+    //     content: "trying to see wt will be returned after deleting",
+    //     tags: ["dev", "trying"],
+    //     userId: "umasree",
     // });
-    // console.log(blog);
+    // const blog = await blogRepo.destroy("643441312fcd376c6462824e");
+    // const blogs = await blogRepo.getBlogsOfUser("umasree");
+    // console.log(blogs);
 });
