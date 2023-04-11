@@ -1,0 +1,16 @@
+.container{
+    background-color: azure;
+    display: grid;
+    grid-column: auto;
+    width: 100%;
+}
+.container>h1{
+    text-align: center;
+    padding: 10px 0px;
+}
+.formControl{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
